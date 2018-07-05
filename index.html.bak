@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>一键写日报</title>
+
+	</head>
+
+	<body>
+
+		<div style="width: 700px;height: 700px;margin: 0 auto;">
+			<form action="http://120.24.249.79/uek_oa/index.php/Admin/Daily_student/add1.html" id="writeform" method="post">
+
+				<div>
+					<!-- 隐藏域传递编号 -->
+					<!--id-->
+					<span>empid &nbsp;的获得方法 &nbsp;<a href="demo.html">点击这里</a></span>
+					<br />
+					<br />
+					 empid:
+					<input type="text" name="empid"> &nbsp;&nbsp;&nbsp; 日 期
+					<input type="datetime" name="date">
+					<!--座右铭-->
+					<br/>
+					<br/> 座右铭:
+					<input type="text" name="motto">
+				</div>
+				<div>
+					<p>
+						<strong style="font-size:18px">今日工作内容</strong>
+					</p>
+				</div>
+				<div>
+					<table id="tableone">
+						<tbody>
+							<tr>
+								<td>序号</td>
+								<td style="color:red">工作内容&nbsp;(必填项*)</td>
+								<td>完成情况/%</td>
+								<td>遇到问题</td>
+							</tr>
+
+							<tr>
+								<td><span>1</span> &nbsp;
+									<span style="color:#e7e7e7">&nbsp;&nbsp;</span> </td>
+								<td>
+									<input type="text" name="1todaycontent" value="" style="border:0px height: 30px;">
+								</td>
+								<td>
+									<input type="number" min="1" max="100" style="width:100px;border:0px;" placeholder="请输入" name="1todaycomplete">
+								</td>
+								<td>
+									<input type="text" class="form-control" value="" style="border:0px" placeholder="请输入" name="1todayproblem">
+								</td>
+							</tr>
+							<tr>
+								<td><span>2</span> &nbsp;
+									<span style="color:#e7e7e7">&nbsp;&nbsp;</span> </td>
+								<td>
+									<input type="text" class="form-control content" name="2todaycontent" value="" style="border:0px height: 30px;">
+								</td>
+								<td>
+									<input type="number" min="1" max="100" style="width:100px;border:0px;" placeholder="请输入" name="2todaycomplete">
+								</td>
+								<td>
+									<input type="text" value="" style="border:0px" placeholder="请输入" name="2todayproblem">
+								</td>
+							</tr>
+							<tr>
+								<td><span>3</span> &nbsp;
+									<span style="color:#e7e7e7">&nbsp;&nbsp;</span> </td>
+								<td>
+									<input type="text" name="3todaycontent" value="" style="border:0px height: 30px;">
+								</td>
+								<td>
+									<input type="number" min="1" max="100" style="width:100px; border:0px;" placeholder="请输入" name="3todaycomplete">
+								</td>
+								<td>
+									<input type="text" value="" style="border:0px 	" placeholder="请输入" name="3todayproblem">
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+					<br />
+					<div>
+						<div>
+							<span>* 学习心得：</span>
+							<textarea placeholder="随便写,最好不要不少于200字" style="width: 690px;height: 70px;" name="mood"></textarea>
+						</div>
+						<div >
+							<span>建议意见：</span>
+							<textarea placeholder="在这里输入建议意见" class="form-control" name="suggest" style="width: 690px;height: 35px;"></textarea>
+						</div>	
+						<div>
+							<span>其他：</span>
+							<textarea placeholder="在这里输入其他" name="others" style="width: 690px;height: 35px;"></textarea>
+						</div>
+						
+						<br>
+						<div>
+							<button class="btn btn-primary btn-lg" style="width:150px" type="submit">提交</button> &nbsp;&nbsp;
+							<button class="btn btn-danger btn-lg" style="width:150px " type="reset">重置</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>
