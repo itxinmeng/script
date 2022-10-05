@@ -20,13 +20,10 @@ link=$(echo -n $base64_ssr| sed s/[[:space:]]//g|sed s#/#_#g|sed s/+/-/g|sed 's/
 doc=$(rpm -qa docker-ce |grep docker |wc -l) 
 if [ $doc -ne 1 ];then
   yum -y install yum-utils
-#  yum-config-manager  --add-repo   http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
   yum-config-manager  --add-repo    https://download.docker.com/linux/centos/docker-ce.repo
   yum -y install docker-ce 
   systemctl start docker
-#  echo '{ "registry-mirrors": ["https://b9pmyelo.mirror.aliyuncs.com"] }' > /etc/docker/daemon.json
   systemctl enable docker 
-  systemctl restart docker
 fi
 
 docker run -td  --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd --name $container_name  itxinmeng/ssr-server
