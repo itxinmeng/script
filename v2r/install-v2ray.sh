@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir /root/conf
-wget https://itxinmeng.github.io/script/v2r/install-v2ray.sh -O /root/conf/config.json
+wget https://itxinmeng.github.io/script/v2r/config.json -O /root/conf/config.json
 
 uuid=$(uuidgen)
 port=10000
