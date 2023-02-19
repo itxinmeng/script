@@ -15,7 +15,7 @@ container_name=$port
 #密码加密
 passwd_base64=$( echo -n $passwd | base64 |sed 's/=//g')
 #ssr明文链接
-ssr="$ip:$port:auth_aes128_sha1:aes-256-cfb:plain:$passwd_base64/?obfsparam=&remarks=eGlubWVuZw&group=eGlubWVuZy3lv4Pmoq"
+ssr="$ip:$port:$protocol:aes-256-cfb:$obfs:$passwd_base64/?obfsparam=&remarks=eGlubWVuZw&group=eGlubWVuZy3lv4Pmoq"
 #加密
 base64_ssr=$(echo -n $ssr|base64)
 #去除空格  /替换为_  , + 替换为 -  去除占位符 =
