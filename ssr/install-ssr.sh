@@ -41,7 +41,7 @@ echo -e "\033[41;37m$ip \033[0m"
 echo -e "\033[41;37m端口 : $port \033[0m"
 echo -e "\033[41;37m密码 : $passwd \033[0m"
 echo -e "\033[41;37m加密 : ase-256-cfb \033[0m"
-echo -e "\033[41;37m协议 :  $protocol \033[0m"
+echo -e "\033[41;37m协议 : $protocol \033[0m"
 echo -e "\033[41;37m混淆 : $obfs \033[0m"
 echo "================================="
 echo
