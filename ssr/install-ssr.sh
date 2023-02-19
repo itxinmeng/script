@@ -31,7 +31,7 @@ if [ $doc -ne 1 ];then
   systemctl enable docker 
 fi
 
-docker run -td  --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd -e PROTOCOL=$protocol -e OBFS=$obfs --name $container_name  itxinmeng/ssr-server
+docker run -td  --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd -e PROTOCOL=$protocol -e OBFS=$obfs --name $container_name  itxinmeng/ssr-server:0.2
 
 clear
 
