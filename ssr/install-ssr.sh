@@ -5,6 +5,11 @@ ip=$(curl -s cip.cc |head -1|awk '{print $3}')
 port=10240
 #ssr密码
 passwd=www.itxinmeng.cn
+#协议
+protocol=auth_chain_c
+#混淆方式
+obfs=http_post
+
 #容器名称
 container_name=$port
 #密码加密
@@ -26,7 +31,7 @@ if [ $doc -ne 1 ];then
   systemctl enable docker 
 fi
 
-docker run -td  --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd --name $container_name  itxinmeng/ssr-server
+docker run -td  --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd -e PROTOCOL=$protocol -e OBFS=$obfs --name $container_name  itxinmeng/ssr-server
 
 clear
 
@@ -36,8 +41,8 @@ echo -e "\033[41;37m$ip \033[0m"
 echo -e "\033[41;37m端口 : $port \033[0m"
 echo -e "\033[41;37m密码 : $passwd \033[0m"
 echo -e "\033[41;37m加密 : ase-256-cfb \033[0m"
-echo -e "\033[41;37m协议 : auth_aes128_sha1 \033[0m"
-echo -e "\033[41;37m混淆 : plain \033[0m"
+echo -e "\033[41;37m协议 :  $protocol \033[0m"
+echo -e "\033[41;37m混淆 : $obfs \033[0m"
 echo "================================="
 echo
 echo "复制以下链接:"
