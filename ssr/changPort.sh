@@ -18,7 +18,7 @@ docker stop $(echo $1 -5 | bc)   &>/dev/null
 
 docker rm $(echo $1 -5 | bc)   &>/dev/null
 
-docker run -td --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd -e PROTOCOL=$protocol -e OBFS=$obfs --name $container_name itxinmeng/ssr-server &>/dev/null
+docker run -td --restart=always -p $port:$port -e PORT=$port -e PASSWORD=$passwd -e PROTOCOL=$protocol -e OBFS=$obfs --name $container_name itxinmeng/ssr-server:0.2 &>/dev/null
 
 if [ $? -eq 0 ];then
     ssr="$ip:$port:$protocol:aes-256-cfb:$obfs:$passwd_base64/?obfsparam=&remarks=eGlubWVuZw&group=eGlubWVuZy1zc3I"
